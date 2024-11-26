@@ -1,14 +1,13 @@
-import { useState } from 'react';
+interface PostProps {
+  author: string;
+  body: string;
+}
 
-const names: string[] = ['Tetz', 'LHS'];
-
-export default function Post() {
-  const [chosenName] = useState(() => names[Math.random() > 0.5 ? 0 : 1]);
-
+export default function Post(props: PostProps) {
   return (
     <div>
-      <p>{chosenName}</p>
-      <p>React was awesome!</p>
+      <p>{props.author}</p>
+      <p>{props.body}</p>
     </div>
   );
 }
