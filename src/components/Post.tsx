@@ -1,10 +1,13 @@
+import { useState } from 'react';
+
 const names: string[] = ['Tetz', 'LHS'];
 
 export default function Post() {
-  const randName: string = Math.random() > 0.5 ? names[0] : names[1];
+  const [chosenName] = useState(() => names[Math.random() > 0.5 ? 0 : 1]);
+
   return (
     <div>
-      <p>{randName}</p>
+      <p>{chosenName}</p>
       <p>React was awesome!</p>
     </div>
   );
