@@ -1,3 +1,5 @@
+import styles from './Post.module.css';
+
 interface PostProps {
   author: string;
   body: string;
@@ -5,9 +7,9 @@ interface PostProps {
 
 export default function Post(props: PostProps) {
   return (
-    <div>
-      <p>{props.author}</p>
-      <p>{props.body}</p>
-    </div>
+    <li className={styles.post}>
+      <p className={styles.author}>저자 : {props.author}</p>
+      <p className={styles.text}>내용 : {props.body}</p>
+    </li>
   );
 }
