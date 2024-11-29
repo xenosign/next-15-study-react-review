@@ -11,8 +11,7 @@ function MainHeader({ onCreatePost }: { onCreatePost: () => void }) {
       </h1>
       <p>
         <button className={classes.button} onClick={onCreatePost}>
-          <MdPostAdd size={18} />
-          New Post
+          <MdPostAdd size={18} />새 포스트
         </button>
       </p>
     </header>

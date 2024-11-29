@@ -70,9 +70,9 @@ export default function NewPost({
       </p>
       <p className={styles.actions}>
         <button type="button" onClick={onClose}>
-          Cancel
+          취소
         </button>
-        <button type="submit">Add Post</button>
+        <button type="submit">글 쓰기</button>
       </p>
     </form>
   );
