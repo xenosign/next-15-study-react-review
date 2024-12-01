@@ -6,6 +6,7 @@ import './index.css';
 import RootLayout from './routes/RootLayout';
 import Posts, { loader as postsLoader } from './routes/Posts';
 import NewPost, { action as newPostAction } from './routes/NewPost';
+import PostDetail, { postDetailLoader } from './routes/PostDetail';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,15 @@ const router = createBrowserRouter([
               </Suspense>
             ),
             action: newPostAction,
+          },
+          {
+            path: '/:id',
+            element: (
+              <Suspense fallback={<div>로딩중...</div>}>
+                <PostDetail />
+              </Suspense>
+            ),
+            loader: postDetailLoader,
           },
         ],
       },

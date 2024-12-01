@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Post.module.css';
 
@@ -8,7 +8,7 @@ interface PostProps {
   body: string;
 }
 
-export default function Post(props: PostProps) {
+export default function Post({ id, author, body }: PostProps) {
   const navigate = useNavigate();
 
   const handleDelete = async (id: number) => {
@@ -18,10 +18,12 @@ export default function Post(props: PostProps) {
 
   return (
     <li className={styles.post}>
-      <p className={styles.author}>저자 : {props.author}</p>
-      <p className={styles.text}>내용 : {props.body}</p>
+      <Link to={`/${id}`}>
+        <p className={styles.author}>저자 : {author}</p>
+        <p className={styles.text}>내용 : {body}</p>
+      </Link>
       <p className={styles.actions}>
-        <button type="button" onClick={() => handleDelete(props.id)}>
+        <button type="button" onClick={() => handleDelete(id)}>
           삭제
         </button>
       </p>
