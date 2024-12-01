@@ -2,7 +2,7 @@ import styles from './NewPost.module.css';
 import {
   ChangeAuthorHandlerType,
   ChangeBodyHandlerType,
-} from './PostListSeparate';
+} from '../components/PostListSeparate';
 
 export default function NewPostSeparate(props: {
   onBodyChange: ChangeBodyHandlerType;
